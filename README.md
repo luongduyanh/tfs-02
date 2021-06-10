@@ -2,7 +2,7 @@
 
 |     Fullname    |    Class     |
 |-----------------|--------------|
-| Bui Van Truong  |   TFS - 02   |
+|  Luong Duy Anh  |   TFS - 02   |
 
 # Directory's tree
 ```
