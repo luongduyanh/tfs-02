@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"math/big"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -138,5 +139,18 @@ func main() {
 	fmt.Println("5 xuat hien", k, "lan")
 
 	//in ra file
+	file, err := os.Create("test-1.txt") //tao file test-1.txt de ghi vao
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
+	}
+	var num_to_str []string //convert tu []float64 sang []string
+	for i := 0; i < len(numbers); i++ {
+		x := fmt.Sprintf("%.2f", numbers[i])
+		num_to_str = append(num_to_str, x)
+	}
+	result1 := strings.Join(num_to_str, "\n") //convert tu []string sang string
+	defer file.Close()
+	file.WriteString(result1)
 
 }
