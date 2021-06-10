@@ -35,7 +35,7 @@ func bubbleSort(sli []float64) {
 			}
 		}
 	}
-	fmt.Println("After Bubble Sorting")
+	fmt.Println("sau khi sap xep:")
 	for _, val := range sli {
 		fmt.Println(val)
 	}
@@ -73,6 +73,39 @@ func checkInit(sli []float64, n float64) (int, bool) {
 	}
 }
 
+//tim so lon nhat
+func max(sli []float64) {
+	max := sli[0]
+	for i := 0; i < len(sli); i++ {
+		if max < sli[i] {
+			max = sli[i]
+		}
+	}
+	fmt.Println("MAX =", max)
+}
+
+//tim so nho nhat
+func min(sli []float64) {
+	min := sli[0]
+	for i := 0; i < len(sli); i++ {
+		if min > sli[i] {
+			min = sli[i]
+		}
+	}
+	fmt.Println("MIN =", min)
+}
+
+//tinh trung binh cong
+func avg(sli []float64) {
+	avg := sli[0]
+	sum := 0.0
+	for i := 0; i < len(sli); i++ {
+		sum += sli[i]
+		avg = sum / (float64(i) + 1)
+	}
+	fmt.Println("AVG =", avg)
+}
+
 func main() {
 	content, err := ioutil.ReadFile("test.txt") //doc file test.txt
 	if err != nil {
@@ -83,31 +116,13 @@ func main() {
 	fmt.Println(numbers, err)
 
 	//tim so lon nhat
-	max := numbers[0]
-	for i := 0; i < len(numbers); i++ {
-		if max < numbers[i] {
-			max = numbers[i]
-		}
-	}
-	fmt.Println("MAX =", max)
+	max(numbers)
 
 	//tim so nho nhat
-	min := numbers[0]
-	for i := 0; i < len(numbers); i++ {
-		if min > numbers[i] {
-			min = numbers[i]
-		}
-	}
-	fmt.Println("MIN =", min)
+	min(numbers)
 
 	//tinh trung binh
-	avg := numbers[0]
-	sum := 0.0
-	for i := 0; i < len(numbers); i++ {
-		sum += numbers[i]
-		avg = sum / (float64(i) + 1)
-	}
-	fmt.Println("AVG =", avg)
+	avg(numbers)
 
 	//bubble sort
 	bubbleSort(numbers)
@@ -123,6 +138,5 @@ func main() {
 	fmt.Println("5 xuat hien", k, "lan")
 
 	//in ra file
-	
 
 }
