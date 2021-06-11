@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	// import local package
-	"./fibo"
+	"ex/fibo"
 )
 
 func main() {
