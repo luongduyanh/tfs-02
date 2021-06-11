@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"ex/handlers" // import local package
+	"../handlers" // import local package
 )
 
 func RunServer() {
