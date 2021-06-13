@@ -14,8 +14,8 @@ function PrintResult(so) {
   document.getElementById("result").innerText = so;
 }
 
-var operator = document.getElementsByClassName("operator");
-for (var i = 0; i < operator.length; i++) {
+let operator = document.getElementsByClassName("operator");
+for (let i = 0; i < operator.length; i++) {
   operator[i].addEventListener("click", function () {
     if (this.id == "clearAll") {
       PrintResult("");
@@ -27,12 +27,12 @@ for (var i = 0; i < operator.length; i++) {
         PrintResult(result);
       }
     } else {
-      var result = GetResult();
-      var old_result = GetOldResult();
+      let result = GetResult();
+      let old_result = GetOldResult();
       if (result != "") {
         old_result = old_result + result;
         if (this.id == "=") {
-          var ket_qua_cuoi = eval(old_result);
+          let ket_qua_cuoi = eval(old_result);
           PrintResult(ket_qua_cuoi);
           PrintOldResult("");
         } else {
@@ -45,10 +45,10 @@ for (var i = 0; i < operator.length; i++) {
   });
 }
 
-var number = document.getElementsByClassName("number");
-for (var i = 0; i < number.length; i++) {
+let number = document.getElementsByClassName("number");
+for (let i = 0; i < number.length; i++) {
   number[i].addEventListener("click", function () {
-    var result = GetResult();
+    let result = GetResult();
     if (result != NaN) {
       result = result + this.id;
       PrintResult(result);
