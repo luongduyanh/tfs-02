@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	shouldRecover := false
+	shouldRecover := true
 	dontPanic(shouldRecover)
 	fmt.Println("After calling panic. Your application is not exit when calling panic. It's magical!!!!!!!!")
 }
