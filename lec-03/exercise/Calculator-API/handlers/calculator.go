@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"encoding/json"
@@ -21,8 +21,8 @@ func Calculator(w http.ResponseWriter, req *http.Request) {
 	b := params["b"]
 	fmt.Printf("%v %v %v\n", op, a, b)
 
-	m, err := strconv.ParseFloat(a[0], 64) //convert string to float
-	n, err := strconv.ParseFloat(b[0], 64)
+	m, _ := strconv.ParseFloat(a[0], 64) //convert string to float
+	n, _ := strconv.ParseFloat(b[0], 64)
 
 	//sum
 	sum := Input{
@@ -93,13 +93,4 @@ func Calculator(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprintln(w, "ha")
 	}
 
-}
-
-func main() {
-	fmt.Println("start")
-	defer func() {
-		fmt.Println("end")
-	}()
-	http.HandleFunc("/calculator", Calculator)
-	http.ListenAndServe(":8090", nil)
 }
